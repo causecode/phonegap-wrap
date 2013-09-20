@@ -1,0 +1,4 @@
+platforms/android/bin/dexedLibs
+platforms/android/bin/classes
+platforms/android/bin/*.apk
+platforms/android/bin/*.ap_

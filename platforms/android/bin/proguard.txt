@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.example.hello.HelloWorld { <init>(...); }
+
+# view res/layout/main.xml #generated:5
+-keep class org.apache.cordova.CordovaWebView { <init>(...); }
+

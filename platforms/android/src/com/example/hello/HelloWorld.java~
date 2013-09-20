@@ -1,0 +1,121 @@
+/*
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+ */
+
+package com.example.hello;
+
+import android.os.Bundle;
+import org.apache.cordova.*;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.LOG;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.annotation.SuppressLint;
+import android.app.*;
+import android.util.Log;
+import android.view.*;
+
+public class HelloWorld extends Activity implements CordovaInterface {
+    CordovaWebView cwv;
+    private final ExecutorService threadPool = Executors.newCachedThreadPool();
+    private int activityState = 0;  // 0=starting, 1=running (after 1st resume), 2=shutting down
+
+    // Plugin to call when activity result is received
+    protected CordovaPlugin activityResultCallback = null;
+    protected boolean activityResultKeepRunning;
+
+    private static final String TAG = "HelloWorld";
+    /*
+     * The variables below are used to cache some of the activity properties.
+     */
+
+
+    // Keep app running when pause is received. (default = true)
+    // If true, then the JavaScript and native code continue to run in the background
+    // when another application (activity) is started.
+    protected boolean keepRunning = true;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+	super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main);
+        cwv = (CordovaWebView) this.findViewById(R.id.mainView);
+        Config.init(this);
+	Log.v(TAG, "Trying to load http://causecode.com");
+        cwv.loadUrl("http://causecode.com",60000);
+    }
+
+    /**
+     * Launch an activity for which you would like a result when it finished. When this activity exits,
+     * your onActivityResult() method will be called.
+     *
+     * @param command           The command object
+     * @param intent            The intent to start
+     * @param requestCode       The request code that is passed to callback to identify the activity
+     */
+    public void startActivityForResult(CordovaPlugin command, Intent intent, int requestCode) {
+        this.activityResultCallback = command;
+        this.activityResultKeepRunning = this.keepRunning;
+
+        // If multitasking turned on, then disable it for activities that return results
+        if (command != null) {
+            this.keepRunning = false;
+        }
+
+        // Start activity
+        super.startActivityForResult(intent, requestCode);
+    }
+
+    public void setActivityResultCallback(CordovaPlugin plugin) {
+        this.activityResultCallback = plugin;
+    }
+
+    /**
+     * Get the Android activity.
+     *
+     * @return
+     */
+    public Activity getActivity() {
+        return this;
+    }
+
+     /**
+     * Called when a message is sent to plugin.
+     *
+     * @param id            The message id
+     * @param data          The message data
+     * @return              Object or null
+     */
+    public Object onMessage(String id, Object data) {
+        
+        return null;
+    }
+
+    public ExecutorService getThreadPool() {
+        return threadPool;
+    }
+
+}
+
