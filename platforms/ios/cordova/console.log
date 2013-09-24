@@ -1,0 +1,22 @@
+2013-09-24 13:06:38.653 HelloWorld[1841:19103] Multi-tasking -> Device: YES, App: YES
+2013-09-24 13:06:40.793 HelloWorld[1841:19103] Resetting plugins due to page load.
+2013-09-24 13:06:41.308 HelloWorld[1841:19103] Finished load of: file:///Users/vishesh/Library/Application%20Support/iPhone%20Simulator/6.1/Applications/A279A422-4C72-4951-B178-E3B168AE3940/HelloWorld.app/www/index.html
+Terminating in response to SpringBoard's termination.
+2013-09-24 15:31:17.504 HelloWorld[2316:19103] Multi-tasking -> Device: YES, App: YES
+2013-09-24 15:31:17.630 HelloWorld[2316:19103] Resetting plugins due to page load.
+2013-09-24 15:31:18.102 HelloWorld[2316:19103] Finished load of: file:///Users/vishesh/Library/Application%20Support/iPhone%20Simulator/6.1/Applications/A279A422-4C72-4951-B178-E3B168AE3940/HelloWorld.app/www/index.html
+2013-09-24 15:37:29.261 HelloWorld[2850:19103] Multi-tasking -> Device: YES, App: YES
+2013-09-24 15:37:29.332 HelloWorld[2850:19103] Resetting plugins due to page load.
+2013-09-24 15:37:29.487 HelloWorld[2850:19103] Finished load of: file:///Users/vishesh/Library/Application%20Support/iPhone%20Simulator/6.1/Applications/A279A422-4C72-4951-B178-E3B168AE3940/HelloWorld.app/www/index.html
+Terminating in response to SpringBoard's termination.
+2013-09-24 15:56:12.239 HelloWorld[3294:19103] Multi-tasking -> Device: YES, App: YES
+2013-09-24 15:56:13.607 HelloWorld[3294:19103] Resetting plugins due to page load.
+2013-09-24 15:56:16.518 HelloWorld[3294:19103] Failed to load webpage with error: A server with the specified hostname could not be found.
+Terminating in response to SpringBoard's termination.
+2013-09-24 15:59:22.440 HelloWorld[3664:19103] Multi-tasking -> Device: YES, App: YES
+2013-09-24 15:59:22.738 HelloWorld[3664:19103] Resetting plugins due to page load.
+Terminating in response to SpringBoard's termination.
+2013-09-24 16:00:06.211 HelloWorld[4020:19103] Multi-tasking -> Device: YES, App: YES
+2013-09-24 16:00:06.270 HelloWorld[4020:19103] Resetting plugins due to page load.
+2013-09-24 16:00:20.502 HelloWorld[4020:19103] Finished load of: https://dev.wearecurio.us/mobile/index
+Terminating in response to SpringBoard's termination.
